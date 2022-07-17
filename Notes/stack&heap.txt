@@ -1,0 +1,28 @@
+================ STACK ================
+- Where:
+    + Methods are called
+    + Arguments are passed
+    + Local variables are stored
+- Stack + Instruction Pointer = State of each thread's execution
+- Stack's properties:
+    + All variable belong to the stack are stored in that stack.( other threads have no access to them)
+    + Statically allocated when the thread is created.
+    + The stack's size is fixed, and relatively small ( Platform dependent-specific)
+    + If the calling hierarchy is too deep, (the stack will be very large.) may get an StackOverFlow Exception. ( Risky with recursive calls)
+
+================ HEAP ================
+The heap is a shared memory region that belongs to the process
+- What is allocated on the HEAP
+    + Objects (anything created with the new operator): String, Object, Collection, Array, etc.
+    + Members of classes (static and non-static variables)
+- Heap memory management:
+    + Governed and managed by Garbage Collector.
+    + Objects - stay as long as we have a reference to them.
+    + Members of classes - exist as long as their parent objects exist ( same life cycle as their parents)
+    + Static variables - stay forever.
+======
+- What is allocated where ?
+   + References:
+        * Can be allocated on the stack/
+        * Can be allocated on the heap if they are members of a class.
+   + Objects: always allocated on the HEAP

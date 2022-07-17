@@ -1,0 +1,26 @@
+=== Race condition
+- Condition when multiple threads are accessing a shared resource
+- At least one thread is modifying the resource
+- The timing of threads' scheduling may cause incorrect results
+- The core of the problem is non-atomic operations performed on the shared resource
+*** Solution:
+    + Identification of the critical section where the race condition is happening
+    + Protection of the critical section by a synchronized block
+=== DATA RACE
+- Compiler and CPU may execute the instructions Out of Order to optimize performance and utilization.
+- They will do so while maintaining the logical correctness of the code.
+- Out of order execution by the compiler and CPU are important features to speed up the code.
+- The compiler re-arranges instructions for better
+    + Branch prediction (optimized loops, "if" statements etc. )
+    + Vectorization - Parallel instruction execution (SIMD)
+    + Prefetching instructions - better cache performance
+- CPU re-arranges instructions for better hardware units utilization.
+*** Solutions:
+Establish a Happens - Before semantics by one of these methods:
+    + Synchronization of methods which modify shared variables (But has a performance penalty: everything need to wait other process to finish)
+    + Declaration of shared variables with the 'volatile' keyword.
+
+=== Rule of Thumb:
+Every shared variable ( modified by at least one thread) should be either:
+    + Guarded by a synchronized block(or any type of lock)
+    + Declare 'volatile' (thread-safe)

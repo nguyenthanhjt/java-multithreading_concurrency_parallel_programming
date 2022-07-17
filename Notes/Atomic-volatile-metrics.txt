@@ -1,0 +1,10 @@
+=== Atomic Operations
+An atomic operation is an operation which is performed as a single unit of work without the possibility of interference from other operations.
+ The Java language specification guarantees that reading or writing a variable is an atomic operation (unless the variable is of type long or double ).
+- All reference assignments are atomic
+- we can get and set reference to object atomically
+- Reading from and writing to the following types: are atomic operations
+    + int, short, nyte, float, char, boolean
+- All assignment to primitive types are safe except long and double( because of 64 bytes)
+=== volatile: reading and writing to volatile variables are thread-safe and atomic
+=== Metrics use cases

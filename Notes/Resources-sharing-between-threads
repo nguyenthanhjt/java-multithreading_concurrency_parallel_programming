@@ -1,0 +1,21 @@
+======= Resource Sharing between Threads
+What is resource?
+    + Variables(integers, Strings...)
+    + Data structure
+    + File or connection handles
+    + Message or work queues
+    + Any objects
+- Heap (shared) :
+    + Objects
+    + Class members
+    + Static variables
+- Stack(not shared)
+    + Local primitive types
+    + Local references
+====== Why do we want to share resources?
+Resource Sharing between threads is a very common problem in multi-threaded programming.
+
+====== Atomic Operation
+- An operation or a set of operations is considered atomic, if it appears to the rest of the system as if it occured at once
+- Single step - "all or nothing".
+- No intermediate states
